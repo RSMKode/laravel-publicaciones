@@ -8,12 +8,12 @@ class PostController extends Controller
 {
     public function index()
     {
-        return 'index';
+        return view('posts.index');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        // guardar
+        return $request->all();
     }
 
     public function destroy()
