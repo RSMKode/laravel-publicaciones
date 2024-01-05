@@ -26,8 +26,10 @@ class PostController extends Controller
         return back()->with('status', 'Publicación guardada con éxito');
     }
 
-    public function destroy()
+    public function destroy(Post $post)
     {
-        // eliminar
+        $post->delete();
+
+        return back();
     }
 }
