@@ -1,4 +1,7 @@
-<a href="#" class="text-lg font-semibold">{{$post->user->name}}</a>
+<a href="{{ route('users.show', $post->user->id)}}" class="text-lg font-semibold">
+    {{$post->user->name}}
+</a>
+
 <p class="mt-1 text-xs">
     {{ $post->body }}
     <br>
