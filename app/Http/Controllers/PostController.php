@@ -13,7 +13,14 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        return $request->all();
+        $request->validate(['body' => 'required']);
+
+        // Para hacer debugging
+        // dd($request->only('body'));
+
+        $request->user()->posts()->create($request->only('body'));
+
+        return back()->with('status', 'Publicación guardada con éxito');
     }
 
     public function destroy()
